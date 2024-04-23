@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classy Discounts!</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        width: 50%; 
+        padding: 20px;
+        border: 15px solid gold; 
+        background-color: beige;
+        text-align: center;
+    }
+    .discount-box {
+        font-size: 4em;
+        margin: 20px 0;
+    }
+    .exclusions {
+        text-align: left;
+        font-size: 0.8em;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+    }
+    @media (max-width: 1117px) {
+        .container {
+            width: 80%; 
+    }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Black Friday at Roe Marketplace</h1>
+    <div id="discountValue" class="discount-box">???</div>
+    <p class="exclusions">Excludes all shoes and boots, all home-goods, all food and pantry items, 
+        all bed linens and comforter sets, all perfume and cosmetics, all home goods, all clothing, 
+        all glassware, all flatware, all furniture - dining, kitchen and bedroom, all books and 
+        magazines, all children's items, all back-packs, all handbags and purses, all socks, all 
+        tights, all moisturizers, all body lotions, all hair accessories and hair care devices such 
+        as hair dryers and tongs, all soaps and toiletries, all towels...and pretty much all of any 
+        item we sell. Oh, you should know, if associate deems it necessary, there is an additional 
+        charge for clicking the discount button. Happy Black Friday Weekend - don't forget to use 
+        our discount code!</p>
+    <button class="click" type="button" onclick="discount()">
+        Click To reveal your discount!
+    </button>
+</div>
+
+<script>
+  const discount = () => {
+    let randomDiscount = 30 + Math.floor(Math.random() * (81 - 30));
+    let discountElement = document.getElementById('discountValue');
+
+    discountElement.parentElement.style.border = '15px solid gold';
+
+    let discountText = randomDiscount + "%";
+    discountElement.textContent = discountText;
+  };
+</script>
+</body>
+</html>
